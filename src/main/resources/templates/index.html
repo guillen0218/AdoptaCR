@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/plantilla :: head}"><title>Inicio</title></head>
+<body>
+<header th:replace="~{layout/plantilla :: header}"/>
+<section class="container mt-5">
+    <h1>Bienvenido a AdoptaCR</h1>
+    <p>Explora mascotas disponibles y encuentra a tu compañero ideal.</p>
+    <a class="btn btn-primary" th:href="@{/mascotas/listado}">Ver Mascotas</a>
+    <a class="btn btn-outline-secondary" th:href="@{/login}">Iniciar Sesión</a>
+</section>
+<footer th:replace="~{layout/plantilla :: footer}"/>
+</body>
+</html>
