@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}"><title>Registro</title></head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
+        <section class="container mt-5" style="max-width:480px;">
+            <h2 class="mb-4">Crear cuenta</h2>
+
+            <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+            <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+
+            <form th:action="@{/registro}" method="post" class="card card-body shadow-sm">
+                <div class="mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input class="form-control" type="text" name="nombre" th:value="${usuario.nombre}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Correo electrónico</label>
+                    <input class="form-control" type="email" name="correo" required th:value="${usuario.correo}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Contraseña</label>
+                    <input class="form-control" type="password" name="contrasena" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Confirmar contraseña</label>
+                    <input class="form-control" type="password" name="confirmarContrasena" required>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary" type="submit">Registrarme</button>
+                    <a class="btn btn-secondary" th:href="@{/login}">Ir a Login</a>
+                </div>
+            </form>
+        </section>
+        <footer th:replace="~{layout/plantilla :: footer}"/>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+com\adoptacr\service\impl\UsuarioServiceImpl.class
+com\adoptacr\controller\LoginController.class
+com\adoptacr\controller\RegistroController.class
+com\adoptacr\domain\Mascota.class
+com\adoptacr\controller\InicioController.class
+com\adoptacr\domain\Usuario.class
+com\adoptacr\controller\InfoController.class
+com\adoptacr\controller\MascotaController.class
+com\adoptacr\service\UsuarioService.class
+com\adoptacr\service\impl\MascotaServiceImpl.class
+com\adoptacr\service\MascotaService.class
+com\adoptacr\AdoptaCr.class
+com\adoptacr\config\SecurityBeans.class
+com\adoptacr\ProjectConfig.class
+com\adoptacr\dao\UsuarioDao.class
+com\adoptacr\dao\MascotaDao.class

@@ -1,0 +1,48 @@
+/* ===== Distribución general ===== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal que abarca todo el alto de la pantalla */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header y footer fijos en su altura natural */
+header, footer {
+    flex: 0 0 auto;
+}
+
+/* Secciones intermedias que se adaptan al espacio disponible */
+.hero, section.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra verticalmente */
+}
+
+/* Ajuste del hero para que se vea completo y proporcione respiro */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80') center/cover;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+.card-body {
+    flex: none;
+}
+/* Ajustes extra para pantallas pequeñas */
+@media (max-height: 700px) {
+    .hero, section.container {
+        padding: 1rem;
+        flex: none;
+    }
+    body {
+        overflow-y: auto; /* si es necesario, permite scroll */
+    }
+}
