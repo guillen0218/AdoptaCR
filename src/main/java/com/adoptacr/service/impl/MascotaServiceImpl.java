@@ -18,6 +18,11 @@ public class MascotaServiceImpl implements MascotaService {
     @Transactional(readOnly = true)
     public List<Mascota> buscarMascotas(String filtro) {
         return mascotaDao.findByRazaContainingIgnoreCaseOrUbicacionContainingIgnoreCase(filtro, filtro);
-        // Si filtro vacío, devolverá todas por coincidencia vacía
+    }
+
+    @Override
+    @Transactional
+    public Mascota guardar(Mascota mascota) {
+        return mascotaDao.save(mascota);
     }
 }
