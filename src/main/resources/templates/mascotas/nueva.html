@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/plantilla :: head}"><title>Publicar Mascota</title></head>
+<body>
+<header th:replace="~{layout/plantilla :: header}"/>
+<section class="container mt-5" style="max-width:720px;">
+  <h2 class="mb-4">Publicar nueva mascota</h2>
+  <form th:action="@{/mascotas/guardar}" method="post" enctype="multipart/form-data" class="card card-body shadow-sm">
+    <div class="row g-3">
+      <div class="col-md-6"><label class="form-label">Nombre</label><input class="form-control" name="nombre" required></div>
+      <div class="col-md-6"><label class="form-label">Raza</label><input class="form-control" name="raza" required></div>
+      <div class="col-md-6"><label class="form-label">Ubicación</label><input class="form-control" name="ubicacion" required></div>
+      <div class="col-md-3"><label class="form-label">Edad</label><input class="form-control" type="number" name="edad"></div>
+      <div class="col-md-12"><label class="form-label">Historia</label><textarea class="form-control" name="historia" rows="4"></textarea></div>
+      <div class="col-md-12"><label class="form-label">Foto</label><input class="form-control" type="file" name="foto" accept="image/*"></div>
+    </div>
+    <div class="mt-3 d-flex gap-2"><button class="btn btn-primary" type="submit">Publicar</button><a class="btn btn-secondary" th:href="@{/mascotas/listado}">Cancelar</a></div>
+  </form>
+</section>
+<footer th:replace="~{layout/plantilla :: footer}"/>
+</body>
+</html>

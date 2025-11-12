@@ -16,5 +16,11 @@ public class Mascota implements Serializable {
     private String nombre;
     private String raza;
     private String ubicacion;
-    private String estado; // DISPONIBLE / ADOPTADO
+    private String estado;
+
+    private Integer edad;
+    @Column(columnDefinition = "TEXT")
+    private String historia;
+    @Column(name = "foto_url")
+    private String fotoUrl;
 }
