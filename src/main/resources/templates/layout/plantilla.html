@@ -13,12 +13,22 @@
         <div class="container">
             <a class="navbar-brand" th:href="@{/}">AdoptaCR</a>
             <div>
-                <a class="nav-link d-inline text-white" th:href="@{/mascotas/listado}">Mascotas</a>
-                <a class="nav-link d-inline text-white" th:href="@{/login}">Login</a>
+                <a class="nav-link d-inline text-white" th:href="@{/mascotas/listado}">
+                    Mascotas
+                </a>
+
+                <a class="nav-link d-inline text-white" th:href="@{/mascotas/nueva}">
+                    Publicar Mascota
+                </a>
+
+                <a class="nav-link d-inline text-white" th:href="@{/login}">
+                    Login
+                </a>
             </div>
         </div>
     </nav>
 </header>
+
 
 <footer th:fragment="footer" class="bg-light text-center py-3 mt-5">
     <div class="container">

@@ -1,4 +1,6 @@
-
+-- =====================================================
+-- BASE DE DATOS
+-- =====================================================
 DROP DATABASE IF EXISTS adoptacr;
 CREATE DATABASE adoptacr
 CHARACTER SET utf8mb4
@@ -6,7 +8,9 @@ COLLATE utf8mb4_unicode_ci;
 
 USE adoptacr;
 
-
+-- =====================================================
+-- TABLA: USUARIO
+-- =====================================================
 CREATE TABLE usuario (
   id_usuario BIGINT PRIMARY KEY AUTO_INCREMENT,
   correo VARCHAR(120) NOT NULL UNIQUE,
@@ -18,7 +22,9 @@ CREATE TABLE usuario (
   fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-
+-- =====================================================
+-- TABLA: MASCOTA
+-- =====================================================
 CREATE TABLE mascota (
   id_mascota BIGINT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(120) NOT NULL,
@@ -34,7 +40,9 @@ CREATE TABLE mascota (
     FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
 );
 
-
+-- =====================================================
+-- TABLA: SOLICITUD DE ADOPCIÓN
+-- =====================================================
 CREATE TABLE solicitud_adopcion (
   id_solicitud BIGINT PRIMARY KEY AUTO_INCREMENT,
   id_usuario BIGINT NOT NULL,
@@ -48,7 +56,9 @@ CREATE TABLE solicitud_adopcion (
     FOREIGN KEY (id_mascota) REFERENCES mascota(id_mascota)
 );
 
-
+-- =====================================================
+-- TABLA: FOTO DE MASCOTA
+-- =====================================================
 CREATE TABLE foto_mascota (
   id_foto BIGINT PRIMARY KEY AUTO_INCREMENT,
   id_mascota BIGINT NOT NULL,
@@ -86,8 +96,9 @@ INSERT INTO solicitud_adopcion (id_usuario, id_mascota, fecha_solicitud, estado)
 (1, 1, CURDATE(), 'PENDIENTE'),
 (1, 2, CURDATE(), 'APROBADA');
 
-
+-- =====================================================
 -- CONSULTAS DE VERIFICACIÓN
+-- =====================================================
 
 -- Mascotas disponibles
 SELECT nombre, raza, ubicacion
